@@ -1,0 +1,16 @@
+#wrapper {
+  width: 80%;
+  margin: auto;
+  max-width: 1200px;
+}
+
+img, object {
+     max-width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+   #wrapper {
+     width: 90%;
+     min-width: 0;
+   }
+}
