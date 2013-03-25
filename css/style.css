@@ -8,6 +8,11 @@ img, object {
      max-width: 100%;
 }
 
+hr {
+  color: black;
+  width: 100%;
+}
+
 a, a:hover, a:visited, a:link, a:active {
     text-decoration: none;
 }
@@ -15,8 +20,8 @@ a.responsive {
     color: darkgrey;
 }
 
-article.social {
-    margin-top: 10%;
+article {
+    margin-bottom: 10%;
 }
 
 #wrapper {
@@ -38,20 +43,23 @@ p.description {
 }
 
 div.social:hover {
-    border-radius: 0px 0px 0px 5px;
-    border-bottom: 2px solid black;
-    border-left: 2px solid black;
+  background-image: url('../img/arrow_g.png');
+  border-left: 2px solid darkgrey;
 }
 
 div.social {
     text-align: left;
-    max-width: 60%;
-    background-image: url('../img/arrow.png');
+    background-image: url('../img/arrow_b.png');
+    background-size: 40px 20px;
     background-repeat: no-repeat;
     background-position: center right;
+    border-left: 2px solid black;
+    padding-left: 10px;
 }
 
-
+.left {
+    text-align: left;
+}
 
 @media screen and (max-width: 800px) {
    #wrapper {
