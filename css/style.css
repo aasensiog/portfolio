@@ -1,12 +1,57 @@
-#wrapper {
-  width: 80%;
-  margin: auto;
-  max-width: 1200px;
+body {
+    font-family: 'Gabriela', serif;
+    margin: auto;
+    text-align: center;
 }
 
 img, object {
      max-width: 100%;
 }
+
+a, a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+}
+a.responsive {
+    color: darkgrey;
+}
+
+article.social {
+    margin-top: 10%;
+}
+
+#wrapper {
+  margin: auto;
+  text-align: center;
+}
+
+img.social {
+    width: 50px;
+    position: 10px;
+}
+
+p.left {
+    text-align: left;
+}
+
+p.description {
+    font-size: 20px;
+}
+
+div.social:hover {
+    border-radius: 0px 0px 0px 5px;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+}
+
+div.social {
+    text-align: left;
+    max-width: 60%;
+    background-image: url('../img/arrow.png');
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+
 
 @media screen and (max-width: 800px) {
    #wrapper {
