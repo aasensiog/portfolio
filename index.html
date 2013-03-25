@@ -17,15 +17,33 @@
 <body>
 
 <section id="wrapper">
+
     <article class='lightgrey'>
         <h1 class="title">Albert Asensio</h1>
         <p class='description left'>Ingeniero inform&aacute;tico y apasionado de Internet y la tecnolog&iacute;a</p>
     </article>
+
     <article class='social darkgrey'>
-        <a href="" class="social large responsive"><div class='social'><img class='social' src="img/twitter.png" alt="">Twitter</div></a>
-        <a href="" class="social large responsive"><div class='social'><img class='social' src="img/in.png" alt="">LinkedIn</div></a>
-        <a href="" class="social large responsive"><div class='social'><img class='social' src="img/mail.png" alt="">eMail</div></a>
-        <a href="" class="social large responsive"><div class='social'><img class='social' src="img/github.png" alt="">Github</div></a>
+        <a target='_blank' href="http://www.twitter.com/aasensiog" class="social large responsive"><div class='social'><img class='social' src="img/twitter.png" alt="">Twitter</div></a>
+        <a target='_blank' href="http://es.linkedin.com/in/albertasensio" class="social large responsive"><div class='social'><img class='social' src="img/in.png" alt="">LinkedIn</div></a>
+        <a target='_blank' href="mailto:me@albertasensio.es" class="social large responsive"><div class='social'><img class='social' src="img/mail.png" alt="">eMail</div></a>
+        <a target='_blank' href="https://github.com/aasensiog" class="social large responsive"><div class='social'><img class='social' src="img/github.png" alt="">Github</div></a>
+    </article>
+
+    <article class='left'>
+        <fieldset>
+        <form action="send_mail.php">
+            <label for='name'>Nombre:</label>
+            <input type="text" id='name' name='name'>
+
+            <label for='email'>Correo:</label>
+            <input type="text" id='email' name='email'>
+
+            <label for='comment'>Comentario:</label>
+            <textarea id='comment' name='comment' cols='50' rows='6'></textarea>
+            <a href='./send_mail.php'><button>Envia</button></a>
+        </form>
+        </fieldset>
     </article>
 </section>
 

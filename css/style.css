@@ -8,6 +8,11 @@ img, object {
      max-width: 100%;
 }
 
+hr {
+  color: black;
+  width: 100%;
+}
+
 a, a:hover, a:visited, a:link, a:active {
     text-decoration: none;
 }
@@ -15,8 +20,8 @@ a.responsive {
     color: darkgrey;
 }
 
-article.social {
-    margin-top: 10%;
+article {
+    margin-bottom: 10%;
 }
 
 #wrapper {
@@ -52,7 +57,9 @@ div.social {
     padding-left: 10px;
 }
 
-
+.left {
+    text-align: left;
+}
 
 @media screen and (max-width: 800px) {
    #wrapper {
