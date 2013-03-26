@@ -1,5 +1,4 @@
 <?php
-if ($_POST["email"]<>'') {
     $ToEmail = 'me@albertasensio.es';
     $EmailSubject = 'Site contact form';
     $mailheader = "From: ".$_POST["email"]."\r\n";
@@ -8,6 +7,11 @@ if ($_POST["email"]<>'') {
     $MESSAGE_BODY = "Name: ".$_POST["name"]."";
     $MESSAGE_BODY .= "Email: ".$_POST["email"]."";
     $MESSAGE_BODY .= "Comment: ".nl2br($_POST["comment"])."";
-    mail($ToEmail, $EmailSubject, $MESSAGE_BODY, $mailheader) or die ("Failure");
+
+    if (mail($ToEmail, $EmailSubject, $MESSAGE_BODY, $mailheader)) {
+        echo("<p>Message successfully sent!</p>");
+    } else {
+        echo("<p>Message delivery failed...</p>");
+    }
+
 ?>
-<?php
