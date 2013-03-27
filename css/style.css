@@ -8,16 +8,14 @@ img, object {
      max-width: 100%;
 }
 
-hr {
-  color: black;
-  width: 100%;
-}
-
 a, a:hover, a:visited, a:link, a:active {
     text-decoration: none;
 }
 a.responsive {
     color: darkgrey;
+}
+a.social:hover {
+    color: black;
 }
 
 article {
@@ -63,6 +61,14 @@ div.social {
 
 .error {
   color: red;
+}
+
+label {
+    font-size: 20px;
+}
+
+input {
+    height: 30px;
 }
 
 @media screen and (max-width: 800px) {

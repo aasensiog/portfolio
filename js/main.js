@@ -32,7 +32,7 @@ $(document).ready(function() {
         data: dataString,
         success: function() {
           $('#contact_form').html("'<div id='message'></div>");
-          $('#message').html('<h2>eMail enviado correctamente</h2>')
+          $('#message').html('<h3>Correo enviado correctamente</h3>')
           .append('<p>Me pondré en contacto en breve.</p>')
           .hide()
           .fadeIn(1500, function() {
