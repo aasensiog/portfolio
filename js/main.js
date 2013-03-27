@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
   $('.error').hide();
   $('#send_mail').click(function() {
@@ -43,3 +44,4 @@ $(document).ready(function() {
 
   });
 });
+
