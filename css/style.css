@@ -61,6 +61,10 @@ div.social {
     text-align: left;
 }
 
+.error {
+  color: red;
+}
+
 @media screen and (max-width: 800px) {
    #wrapper {
      width: 90%;
