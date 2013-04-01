@@ -71,9 +71,14 @@ input {
     height: 30px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 400px) {
    #wrapper {
      width: 90%;
      min-width: 0;
+     font-size: 10px;
+   }
+   
+   div.social {
+	   font-size: 10px;
    }
 }
