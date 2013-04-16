@@ -8,14 +8,16 @@ img, object {
      max-width: 100%;
 }
 
+hr {
+  color: black;
+  width: 100%;
+}
+
 a, a:hover, a:visited, a:link, a:active {
     text-decoration: none;
 }
 a.responsive {
     color: darkgrey;
-}
-a.social:hover {
-    color: black;
 }
 
 article {
@@ -38,6 +40,16 @@ p.left {
 
 p.description {
     font-size: 20px;
+}
+
+hr {
+  display: block;
+  margin-before: 0.5em;
+  margin-after: 0.5em;
+  margin-start: auto;
+  margin-end: auto;
+  border-style: inset;
+  border-width: 1px;
 }
 
 div.social:hover {
@@ -63,22 +75,9 @@ div.social {
   color: red;
 }
 
-label {
-    font-size: 20px;
-}
-
-input {
-    height: 30px;
-}
-
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 800px) {
    #wrapper {
      width: 90%;
      min-width: 0;
-     font-size: 10px;
-   }
-   
-   div.social {
-	   font-size: 10px;
    }
 }
