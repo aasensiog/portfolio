@@ -1,0 +1,76 @@
+@import url(http://fonts.googleapis.com/css?family=Della+Respira);
+
+body {
+     text-align: center;
+     min-width: 960px;
+     padding: 0;
+     margin: 0;
+     height: 100%;
+     font-family: 'Della Respira', serif;
+     background-color: MintCream;
+}
+ #wrapper {
+     text-align: left;
+     width: 960px;
+     margin-left: auto;
+     margin-right: auto;
+     padding: 0;
+ }
+
+ #content {
+     margin: 200px 0 0 0;
+ }
+
+ #content .inner {
+     padding-top: 1px;
+     margin: 0 10px 10px 10px;
+ }
+
+ #side {
+     float: right;
+     width: 180px;
+     margin: 0;
+ }
+
+ #side .inner {
+     padding-top: 1px;
+     margin: 0 10px 10px 10px;
+ }
+
+ #footer {
+     margin-top: 10px;
+     clear: both;
+ }
+
+ #footer .inner {
+     margin: 10px;
+ }
+
+ #description {
+     width: 500px;
+     margin-left: 0px;
+ }
+
+ #images {
+     width: 440px;
+ }
+
+ .left {
+     float:left;
+     margin-left: 10px;
+ }
+
+ .title {
+     font-size: 60px;
+     font-weight: bold;
+     color: DimGray;
+ }
+
+  .slogan {
+     font-size: 35px;
+     font-style: italic;
+     color: SeaGreen;
+ }
+
+.slideshow { height: 232px; width: 232px; margin: auto }
+.slideshow img { padding: 15px; border: 1px solid #ccc; background-color: #eee; }
