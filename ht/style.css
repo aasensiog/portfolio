@@ -18,7 +18,7 @@ body {
  }
 
  #content {
-     margin: 200px 0 0 0;
+     margin: 40px 0 0 0;
  }
 
  #content .inner {
@@ -44,6 +44,11 @@ body {
 
  #footer .inner {
      margin: 10px;
+ }
+ 
+ .footer {
+	 position: absolute;
+	 bottom: 50px;
  }
 
  #description {
@@ -73,4 +78,4 @@ body {
  }
 
 .slideshow { height: 232px; width: 232px; margin: auto }
-.slideshow img { padding: 15px; border: 1px solid #ccc; background-color: #eee; }
+.slideshow img { padding: 5px; border: 1px solid #ccc; background-color: #eee; }
