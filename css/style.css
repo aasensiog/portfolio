@@ -42,6 +42,25 @@ p.description {
     font-size: 20px;
 }
 
+.coloranimation {
+  animation: 20s color infinite;
+}
+
+@keyframes color {
+  0% {
+    color: #1531AE;
+  }
+  25% {
+    color: #4962D6;
+  }
+  50% {
+    color: #6f81d6;
+  }
+  100% {
+    color: #23448f;
+  }
+}
+
 hr {
   display: block;
   margin-before: 0.5em;
