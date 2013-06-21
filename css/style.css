@@ -44,9 +44,24 @@ p.description {
 
 .coloranimation {
   animation: 20s color infinite;
+  -webkit-animation: 20s color infinite;
 }
 
 @keyframes color {
+  0% {
+    color: #1531AE;
+  }
+  25% {
+    color: #4962D6;
+  }
+  50% {
+    color: #6f81d6;
+  }
+  100% {
+    color: #23448f;
+  }
+}
+@-webkit-keyframes color {
   0% {
     color: #1531AE;
   }
