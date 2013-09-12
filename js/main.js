@@ -17,7 +17,7 @@ $(document).ready(function() {
         $('input#email').focus();
         return false;
       }
-      var comment = $('input#comment').val();
+      var comment = $('textarea#comment').val();
       if (comment == '') {
         $('label#comment_error').show();
         $('input#comment').focus();
