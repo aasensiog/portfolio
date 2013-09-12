@@ -4,9 +4,10 @@
     $mailheader = "From: ".$_POST["email"]."\r\n";
     $mailheader .= "Reply-To: ".$_POST["email"]."\r\n";
     $mailheader .= "Content-type: text/html; charset=iso-8859-1\r\n";
-    $MESSAGE_BODY = "Name: ".$_POST["name"]."";
-    $MESSAGE_BODY .= "Email: ".$_POST["email"]."";
-    $MESSAGE_BODY .= "Comment: ".nl2br($_POST["comment"])."";
+    $MESSAGE_BODY = "Name: ".$_POST["name"]."\r\n";
+    $MESSAGE_BODY .= "Email: ".$_POST["email"]."\r\n";
+    $MESSAGE_BODY .= "Comment: ".$_POST["comment"]."\r\n";
+    $MESSAGE_BODY .= "From: ".$_POST["from"]."\r\n";
 
     if (mail($ToEmail, $EmailSubject, $MESSAGE_BODY, $mailheader)) {
         echo("<p>Message successfully sent!</p>");
