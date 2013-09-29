@@ -1,62 +1,168 @@
+<!DOCTYPE html>
 <html>
-
-<head>
-    <meta name='viewport' content='width=device-width, minimum-scale=1.0, maximum-scale=1.0' />
+  <head>
+    <title>Albert Asensio</title>
     <meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1' />
 
-    <!-- JS  -->
-    <script src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
-    <script src='js/main.js'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
 
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
 
-    <!-- CSS -->
-    <link rel='stylesheet' href='css/less/less.css'>
-    <link rel='stylesheet' href='css/style.css'>
+    <style>
 
-    <!-- Fonts -->
+      .twitter {
+         width: 256px;
+         height: 256px;
+         display:block;
+         background:transparent url('img/twitter.png') center top no-repeat;
+        }
+
+        .twitter:hover {
+           background-image: url('img/twitter_hover.png');
+        }
+        .github {
+         width: 256px;
+         height: 256px;
+         display:block;
+         background:transparent url('img/github.png') center top no-repeat;
+        }
+
+        .github:hover {
+           background-image: url('img/github_hover.png');
+        }
+
+        .linkedin {
+         width: 256px;
+         height: 256px;
+         display:block;
+         background:transparent url('img/linkedin.png') center top no-repeat;
+        }
+
+        .linkedin:hover {
+           background-image: url('img/linkedin_hover.png');
+        }
+        .instagram {
+         width: 256px;
+         height: 256px;
+         display:block;
+         background:transparent url('img/instagram.png') center top no-repeat;
+        }
+
+        .instagram:hover {
+           background-image: url('img/instagram_hover.png');
+        }
+        .gplus {
+         width: 256px;
+         height: 256px;
+         display:block;
+         background:transparent url('img/gplus.png') center top no-repeat;
+        }
+
+        .gplus:hover {
+           background-image: url('img/gplus_hover.png');
+        }
+
+        .coloranimation {
+          animation: 20s color infinite;
+          -webkit-animation: 20s color infinite;
+        }
+
+        @keyframes color {
+          0% {
+            color: #1531AE;
+          }
+          25% {
+            color: #4962D6;
+          }
+          50% {
+            color: #6f81d6;
+          }
+          100% {
+            color: #23448f;
+          }
+        }
+        @-webkit-keyframes color {
+          0% {
+            color: #1531AE;
+          }
+          25% {
+            color: #4962D6;
+          }
+          50% {
+            color: #6f81d6;
+          }
+          100% {
+            color: #23448f;
+          }
+        }
+        hr {
+          display: block;
+          margin-before: 0.5em;
+          margin-after: 0.5em;
+          margin-start: auto;
+          margin-end: auto;
+          border-style: inset;
+          border-width: 1px;
+        }
+    </style>
     <link href='http://fonts.googleapis.com/css?family=Gabriela' rel='stylesheet' type='text/css'>
 
-</head>
-<body>
+  </head>
+  <body>
+    <div class='jumbotron'>
+      <div class="container">
+        <h1 class='coloranimation'>Albert Asensio</h1>
+        <p class='description left'>Ingeniero informático apasionado del <span class='coloranimation'>deporte</span> y la <span class='coloranimation'>tecnología</span></p>
+        <div class="row">
+          <a href='http://twitter.com/aasensiog'><div class="col-xs-12 col-sm-6 col-md-3 twitter" data-toggle="tooltip" data-placement='bottom' title="Twitter"></div></a>
+          <a href='http://es.linkedin.com/in/albertasensio'><div class="col-xs-12 col-sm-6 col-md-3 linkedin" data-toggle="tooltip" data-placement='bottom' title="LinkedIn"></div></a>
+          <a href='https://github.com/aasensiog'><div class="col-xs-12 col-sm-6 col-md-3 github" data-toggle="tooltip" data-placement='bottom' title="Github"></div></a>
+          <a href='https://plus.google.com/111003444962199901742'><div class="col-xs-12 col-sm-6 col-md-3 gplus" data-toggle="tooltip" data-placement='bottom' title="Google plus"></div></a>
+          <a href='http://instagram.com/aasensiog'><div class="col-xs-12 col-sm-6 col-md-3 instagram" data-toggle="tooltip" data-placement='bottom' title="Instagram"></div></a>
+        </div>
+        <hr />
+        <form id='contact' method='' name='contact' role='form' onsubmit='return false;'>
+          <h3 class='coloranimation'>Envía un mensaje</h3>
+          <div class="form-group">
+            <label for="email">Correo</label>
+            <input id='email' name='email' type="email" class="form-control" id="email" placeholder="Tu dirección de correo" required>
+          </div>
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input id='name' name='name' type="text" class="form-control" id="name" placeholder="Nombre" required>
+          </div>
+          <div class='form-group'>
+            <label for='comment'>Comentario</label>
+            <textarea id='comment' name='comment' class="form-control" rows="3" placeholder='Escribe sin miedo :)' required></textarea>
+          </div>
+          <div id='msg_ok' class="alert alert-success alert-dismissable">
+            <button id='msg_ok_x' type="button" class="close" aria-hidden="true">&times;</button>
+            Mensaje enviado correctamente
+          </div>
+          <div id='msg_ko' class="alert alert-danger alert-dismissable">
+            <button id='msg_ko_x' type="button" class="close" aria-hidden="true">&times;</button>
+            Error al enviar el mensaje
+          </div>
 
-<section id='wrapper'>
-
-    <article class='lightgrey'>
-        <h1 class='title coloranimation'>Albert Asensio</h1>
-        <p class='description left'>Ingeniero informático y apasionado del <span class='coloranimation'>deporte</span> y la <span class='coloranimation'>tecnología</span></p>
-    </article>
-    <br/>
-
-    <article class='social darkgrey'>
-        <a target='_blank' href='http://www.twitter.com/aasensiog' class='social large responsive'><div class='social coloranimation'><img class='social' src='img/twitter.png' alt=''>Twitter</div></a>
-        <a target='_blank' href='http://es.linkedin.com/in/albertasensio' class='social large responsive'><div class='social coloranimation'><img class='social' src='img/in.png' alt=''>LinkedIn</div></a>
-        <a target='_blank' href='mailto:me@albertasensio.es' class='social large responsive'><div class='social coloranimation'><img class='social' src='img/mail.png' alt=''>eMail</div></a>
-        <a target='_blank' href='https://github.com/aasensiog' class='social large responsive'><div class='social coloranimation'><img class='social' src='img/github.png' alt=''>Github</div></a>
-    </article>
-
-    <hr>
-
-    <article class='left' id='contact_form'>
-        <form action='' name='contact'>
-        <table>
-            <tr>
-                <td><input type='text' id='name' name='name' placeholder='Nombre' required></td>
-            </tr>
-            <tr>
-                <td><input type='email' id='email' name='email' placeholder='Dirección de correo' required></td>
-            </tr>
-            <tr>
-                <td><textarea id='comment' name='comment' cols='50' rows='6' placeholder='Comentario' required></textarea></td>
-            </tr>
-            <br />
-            <tr>
-                <td><input type='submit' name='submit' id='send_mail' value='Envía' /></td>
-            </tr>
-        </table>
+          <button id='send_mail' type="submit" name='submit' class="btn btn-default btn-lg">Envía</button>        
         </form>
-    </article>
-</section>
+      </div>
+    </div>
 
-</body>
 
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="lib/bootstrap/bootstrap.min.js"></script>
+    <script src='js/main.js'></script>
+
+  </body>
 </html>
+
+
+
+
