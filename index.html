@@ -16,15 +16,24 @@
 
     <style>
 
-      .twitter {
-         width: 256px;
-         height: 256px;
-         display:block;
-         background:transparent url('img/twitter.png') center top no-repeat;
-        }
+      .github{background: url('img/sprite.png') no-repeat top left; background-position: 0 0; width: 256px; height: 256px; }
+      .github:hover{background: url('img/sprite.png') no-repeat top left; background-position: 0 -306px; width: 256px; height: 256px; }
+      .gplus{background: url('img/sprite.png') no-repeat top left; background-position: 0 -612px; width: 256px; height: 256px; }
+      .gplus:hover{background: url('img/sprite.png') no-repeat top left; background-position: 0 -918px; width: 256px; height: 256px; }
+      .instagram{background: url('img/sprite.png') no-repeat top left; background-position: 0 -1224px; width: 256px; height: 256px; }
+      .instagram:hover{background: url('img/sprite.png') no-repeat top left; background-position: 0 -1530px; width: 256px; height: 256px; }
+      .linkedin{background: url('img/sprite.png') no-repeat top left; background-position: 0 -1836px; width: 256px; height: 256px; }
+      .linkedin:hover{background: url('img/sprite.png') no-repeat top left; background-position: -306px 0; width: 256px; height: 256px; }
+      .twitter{background: url('img/sprite.png') no-repeat top left; background-position: -306px -306px; width: 256px; height: 256px; }
+      .twitter:hover{background: url('img/sprite.png') no-repeat top left; background-position: -306px -612px; width: 256px; height: 256px; }
+
+
+
+/*
+        .twitter { background: url('img/sprite.png') no-repeat top left; background-position: -306px -306px; width: 256px; height: 256px; }
 
         .twitter:hover {
-           background-image: url('img/twitter_hover.png');
+           { background: url('img/sprite.png') no-repeat top left; background-position: -306px -612px; width: 256px; height: 256px; }
         }
         .github {
          width: 256px;
@@ -67,7 +76,7 @@
         .gplus:hover {
            background-image: url('img/gplus_hover.png');
         }
-
+*/
         .coloranimation {
           animation: 20s color infinite;
           -webkit-animation: 20s color infinite;
@@ -119,7 +128,7 @@
       <div class="container">
         <h1 class='coloranimation'>Albert Asensio</h1>
         <p class='description left'>Ingeniero informático apasionado del <span class='coloranimation'>deporte</span> y la <span class='coloranimation'>tecnología</span></p>
-        <div class="row">
+        <div id='social' class="row">
           <a href='http://twitter.com/aasensiog'><div class="col-xs-12 col-sm-6 col-md-3 twitter" data-toggle="tooltip" data-placement='bottom' title="Twitter"></div></a>
           <a href='http://es.linkedin.com/in/albertasensio'><div class="col-xs-12 col-sm-6 col-md-3 linkedin" data-toggle="tooltip" data-placement='bottom' title="LinkedIn"></div></a>
           <a href='https://github.com/aasensiog'><div class="col-xs-12 col-sm-6 col-md-3 github" data-toggle="tooltip" data-placement='bottom' title="Github"></div></a>
@@ -150,7 +159,7 @@
             Error al enviar el mensaje
           </div>
 
-          <button id='send_mail' type="submit" name='submit' class="btn btn-default btn-lg">Envía</button>        
+          <button id='send_mail' type="submit" name='submit' class="btn btn-default btn-lg">Envía</button>
         </form>
       </div>
     </div>
