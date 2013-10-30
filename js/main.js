@@ -1,47 +1,43 @@
 
 $(document).ready(function() {
+
+  var $name = $('input#name'),
+    $email = $('input#email'),
+    $comment = $('textarea#comment'),
+    clearForm = function() {
+      $name.val('');
+      $email.val('');
+      $comment.val('');
+    };
+  
   $('.error').hide();
-  $('#send_mail').click(function() {
-    // validate and process form here
-
-    $('.error').hide();
-      var name = $('input#name').val();
-      if (name == '') {
-        $('label#name_error').show();
-        $('input#name').focus();
-        return false;
-      }
-      var email = $('input#email').val();
-      if (email == '') {
-        $('label#email_error').show();
-        $('input#email').focus();
-        return false;
-      }
-      var comment = $('textarea#comment').val();
-      if (comment == '') {
-        $('label#comment_error').show();
-        $('input#comment').focus();
-        return false;
-      }
-
-      var dataString = 'name='+ name + '&email=' + email + '&comment=' + comment;
-      //alert (dataString);return false;
-      $.ajax({
-        type: 'POST',
-        url: 'bin/send_mail.php',
-        data: dataString,
-        success: function() {
-          $('#contact_form').html("'<div id='message'></div>");
-          $('#message').html('<h3>Correo enviado correctamente</h3>')
-          .append('<p>Me pondré en contacto en breve.</p>')
-          .hide()
-          .fadeIn(1500, function() {
-            $('#message').append("<img id='checkmark' src='img/check.png' />");
-          });
-        }
-      });
+  
+  $('#send_mail').click(function() {  
+    //$('#contact').checkValidity();
+    if (!$name.val() || !$email.val() || !$comment.val()) {
       return false;
+    }
+    $.post("bin/send_mail.php",$("#contact").serialize(),function(res){
+        if(res){
+            $('#msg_ok').fadeIn();
+            clearForm();
+        } else {
+            $('#msg_ko').fadeIn();
+        }
+    });
 
   });
+
+  $('div#msg_ok').hide();
+  $('#msg_ok_x').click(function () {
+    $('div#msg_ok').hide();
+  });
+  $('div#msg_ko').hide();
+  $('#msg_ko_x').click(function () {
+    $('div#msg_ko').hide();
+  });
+
+  $('div[data-toggle=tooltip]').tooltip();
+
 });
 
