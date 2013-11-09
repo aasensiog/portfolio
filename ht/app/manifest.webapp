@@ -1,0 +1,21 @@
+{
+    "version": "1.2",
+	"name": "HT Live Viewer",
+	"description": "Live your current Hattrick matches anywhere!",
+	"type": "privileged",
+	"launch_path": "/index.html",
+	"developer": {
+		"name": "Albert Asensio",
+		"url": "http://albertasensio.es"
+	},
+	"icons": {
+		"128": "/logo_128.png"
+	},
+	"default_locale": "en",
+	"installs_allowed_from": ["*"],
+	"permissions": {
+		"systemXHR":{
+			"description": "Required for connecting to service provider"
+		}
+	}
+}
