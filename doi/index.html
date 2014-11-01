@@ -29,17 +29,30 @@
 
 	function genera_nif() {
 		var numero = Math.floor((Math.random() * 100000000));
-		return numero.toString() + calcula_letra(numero);
+		return pad(numero.toString(), 8) + calcula_letra(numero);
 	}
 	function genera_nie() {
-
+		var primer_digito = Math.floor((Math.random() * 3));
+		var numero = Math.floor((Math.random() * 10000000));
+		return "XYZ".charAt(primer_digito) + pad(numero.toString(), 7) + calcula_letra(parseInt(primer_digito.toString() + numero.toString));
 	}
 	function genera_cif() {
+	//http://www.jagar.es/Economia/Ccif.htm
+	// O P P N N N N N C
+	var O = "ABCDEFGHKLMNPQS"; //15 //KLM formato antiguo
+	// var P = //01 - 99
+	var N = Math.floor((Math.random() * 100000));
+
 
 	}
 	function calcula_letra(dni_int) {
 	    var lockup = 'TRWAGMYFPDXBNJZSQVHLCKE';
 	    return lockup.charAt(dni_int % 23);
+	}
+
+	function pad (str, max) {
+		str = str.toString();
+	  	return str.length < max ? pad("0" + str, max) : str;
 	}
 
 </script>
