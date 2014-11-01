@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="keywords" content="doi, dni, generador, cif, nie">
+<meta http-equiv="last-modified" content="2013-12-05@12:12:00 TMZ" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+<title>Generador DOI</title>
+
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<!-- <link rel="stylesheet" href="style.css" type="text/css"> -->
+<style type="text/css">
+	
+</style>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var $result = $('#result');
+		$('#nif').click(function() {
+			$result.val(genera_nif());
+		});
+		$('#nie').click(function() {
+			$result.val(genera_nie());
+		});
+		$('#cif').click(function() {
+			$result.val(genera_cif());
+		});
+	});
+
+	function genera_nif() {
+		var numero = Math.floor((Math.random() * 100000000));
+		return numero.toString() + calcula_letra(numero);
+	}
+	function genera_nie() {
+
+	}
+	function genera_cif() {
+
+	}
+	function calcula_letra(dni_int) {
+	    var lockup = 'TRWAGMYFPDXBNJZSQVHLCKE';
+	    return lockup.charAt(dni_int % 23);
+	}
+
+</script>
+</head>
+<body>
+	<h1>Generador DOI</h1>
+	<input type="text" id='result' />
+	<button id='nif'>NIF</button>
+	<button id='nie'>NIE</button>
+	<button id='cif'>CIF</button>
+</body>
+</html>
