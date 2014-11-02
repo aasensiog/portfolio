@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords" content="doi, dni, generador, cif, nie">
 <meta http-equiv="last-modified" content="2013-12-05@12:12:00 TMZ" />
 <meta name="viewport" content="width=device-width; initial-scale=1.0">
 
-<title>Generador DOI</title>
+<title>Generador DOI (NIF, NIE, CIF)</title>
 
 <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 <script src="lib/bootstrap/bootstrap.min.js"></script>
@@ -24,9 +24,9 @@
 		$('#nie').click(function() {
 			$('#result_nie').val(genera_nie());
 		});
-		// $('#cif').click(function() {
-		// 	$('#result_cif').val(genera_cif());
-		// });
+		$('#cif').click(function() {
+			$('#result_cif').val(genera_cif());
+		});
 
 		$('#result_nif').val(genera_nif());
 		$('#result_nie').val(genera_nie());
@@ -67,20 +67,32 @@
 	<div class="container">
 		<div class="jumbotron">
 				<h1>Generador DOI</h1>
-				<p>jrncjn rjc nejc jkec nrjk </p>
+				<p>Genera NIF, NIE y CIF aleatorios válidos</p>
 		</div>
 		<div class="row">
 			<div class='col-md-4'>
-				<input class="form-control" type="text" id='result_nif' />
-				<button class="btn btn-success btn-lg" id='nif'>NIF</button>
+				<div class="input-group">
+					<input type="text" class="form-control" id='result_nif'>
+					<span class="input-group-btn">
+						<button class="btn btn-success btn-md" id='nif'>Genera NIF</button>
+					</span>
+			    </div>
 			</div>
 			<div class='col-md-4'>
-				<input class="form-control" type="text" id='result_nie' />
-				<button class="btn btn-warning btn-lg" id='nie'>NIE</button>
+				<div class="input-group">
+					<input type="text" class="form-control" id='result_nie'>
+					<span class="input-group-btn">
+						<button class="btn btn-success btn-md" id='nie'>Genera NIE</button>
+					</span>
+			    </div>
 			</div>
 			<div class='col-md-4'>
-				<input class="form-control" type="text" id='result_cif' />
-				<button class="btn btn-primary btn-lg" id='cif'>CIF</button>
+				<div class="input-group">
+					<input type="text" class="form-control" id='result_cif' placeholder='Disponible próximamente'>
+					<span class="input-group-btn">
+						<button class="btn btn-success btn-md" id='cif' disabled>Genera CIF</button>
+					</span>
+			    </div>
 			</div>
 		</div>
 	</div>
