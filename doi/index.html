@@ -9,7 +9,9 @@
 <title>Generador DOI</title>
 
 <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-<!-- <link rel="stylesheet" href="style.css" type="text/css"> -->
+<script src="lib/bootstrap/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
 <style type="text/css">
 	
 </style>
@@ -17,14 +19,18 @@
 	$(document).ready(function() {
 		var $result = $('#result');
 		$('#nif').click(function() {
-			$result.val(genera_nif());
+			$('#result_nif').val(genera_nif());
 		});
 		$('#nie').click(function() {
-			$result.val(genera_nie());
+			$('#result_nie').val(genera_nie());
 		});
-		$('#cif').click(function() {
-			$result.val(genera_cif());
-		});
+		// $('#cif').click(function() {
+		// 	$('#result_cif').val(genera_cif());
+		// });
+
+		$('#result_nif').val(genera_nif());
+		$('#result_nie').val(genera_nie());
+		// $('#result_cif').val(genera_cif());
 	});
 
 	function genera_nif() {
@@ -58,10 +64,25 @@
 </script>
 </head>
 <body>
-	<h1>Generador DOI</h1>
-	<input type="text" id='result' />
-	<button id='nif'>NIF</button>
-	<button id='nie'>NIE</button>
-	<button id='cif'>CIF</button>
+	<div class="container">
+		<div class="jumbotron">
+				<h1>Generador DOI</h1>
+				<p>jrncjn rjc nejc jkec nrjk </p>
+		</div>
+		<div class="row">
+			<div class='col-md-4'>
+				<input class="form-control" type="text" id='result_nif' />
+				<button class="btn btn-success btn-lg" id='nif'>NIF</button>
+			</div>
+			<div class='col-md-4'>
+				<input class="form-control" type="text" id='result_nie' />
+				<button class="btn btn-warning btn-lg" id='nie'>NIE</button>
+			</div>
+			<div class='col-md-4'>
+				<input class="form-control" type="text" id='result_cif' />
+				<button class="btn btn-primary btn-lg" id='cif'>CIF</button>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
