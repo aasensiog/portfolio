@@ -13,9 +13,66 @@
 
 <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
 <style type="text/css">
-	
+	.coloranimation {
+        animation: 20s color infinite;
+        -webkit-animation: 20s color infinite;
+      }
+
+      @keyframes color {
+        0% {
+          color: #DD1E2F;
+        }
+        15% {
+          color: #EBB035;
+        }
+        30% {
+          color: #06A2CB;
+        }
+        45% {
+          color: #218559;
+        }
+        60% {
+          color: #D0C6B1;
+        }
+        75% {
+          color: #192823;
+        }
+        88% {
+          color: #460eed;
+        }
+        100% {
+          color: #192823;
+        }
+      }
+      @-webkit-keyframes color {
+        0% {
+          color: #DD1E2F;
+        }
+        15% {
+          color: #EBB035;
+        }
+        30% {
+          color: #06A2CB;
+        }
+        45% {
+          color: #218559;
+        }
+        60% {
+          color: #D0C6B1;
+        }
+        75% {
+          color: #192823;
+        }
+        88% {
+          color: #460eed;
+        }
+        100% {
+          color: #192823;
+        }
+      }
 </style>
 <script type="text/javascript">
+
 	$(document).ready(function() {
 		var $result = $('#result');
 		$('#nif').click(function() {
@@ -37,20 +94,21 @@
 		var numero = Math.floor((Math.random() * 100000000));
 		return pad(numero.toString(), 8) + calcula_letra(numero);
 	}
+
 	function genera_nie() {
 		var primer_digito = Math.floor((Math.random() * 3));
 		var numero = Math.floor((Math.random() * 10000000));
 		return "XYZ".charAt(primer_digito) + pad(numero.toString(), 7) + calcula_letra(parseInt(primer_digito.toString() + numero.toString));
 	}
+
 	function genera_cif() {
-	//http://www.jagar.es/Economia/Ccif.htm
-	// O P P N N N N N C
-	var O = "ABCDEFGHKLMNPQS"; //15 //KLM formato antiguo
-	// var P = //01 - 99
-	var N = Math.floor((Math.random() * 100000));
-
-
+		//http://www.jagar.es/Economia/Ccif.htm
+		// O P P N N N N N C
+		var O = "ABCDEFGHKLMNPQS"; //15 //KLM formato antiguo
+		// var P = //01 - 99
+		var N = Math.floor((Math.random() * 100000));
 	}
+
 	function calcula_letra(dni_int) {
 	    var lockup = 'TRWAGMYFPDXBNJZSQVHLCKE';
 	    return lockup.charAt(dni_int % 23);
@@ -61,20 +119,24 @@
 	  	return str.length < max ? pad("0" + str, max) : str;
 	}
 
+	function copia_portapapeles(val) {
+		window.clipboardData.setData("Text", val);
+	}
+
 </script>
 </head>
 <body>
 	<div class="container">
 		<div class="jumbotron">
-				<h1>Generador DOI</h1>
-				<p>Genera NIF, NIE y CIF aleatorios válidos</p>
+				<h1 class='coloranimation'>Generador DOI</h1>
+				<h4>Genera <span class='coloranimation'>NIF</span>, <span class='coloranimation'>NIE</span> y <span class='coloranimation'>CIF</span> aleatorios válidos</h4>
 		</div>
 		<div class="row">
 			<div class='col-md-4'>
 				<div class="input-group">
 					<input type="text" class="form-control" id='result_nif'>
 					<span class="input-group-btn">
-						<button class="btn btn-success btn-md" id='nif'>Genera NIF</button>
+						<button class="btn btn-md coloranimation" id='nif'>Genera NIF <span class="glyphicon glyphicon-repeat"></span></button>
 					</span>
 			    </div>
 			</div>
@@ -82,7 +144,7 @@
 				<div class="input-group">
 					<input type="text" class="form-control" id='result_nie'>
 					<span class="input-group-btn">
-						<button class="btn btn-success btn-md" id='nie'>Genera NIE</button>
+						<button class="btn btn-md coloranimation" id='nie'>Genera NIE <span class="glyphicon glyphicon-repeat"></span></button>
 					</span>
 			    </div>
 			</div>
@@ -90,7 +152,7 @@
 				<div class="input-group">
 					<input type="text" class="form-control" id='result_cif' placeholder='Disponible próximamente'>
 					<span class="input-group-btn">
-						<button class="btn btn-success btn-md" id='cif' disabled>Genera CIF</button>
+						<button class="btn btn-md coloranimation" id='cif' disabled>Genera CIF <span class="glyphicon glyphicon-repeat"></span></button>
 					</span>
 			    </div>
 			</div>
