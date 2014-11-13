@@ -23,7 +23,7 @@ function genera_nif() {
 function genera_nie() {
 	var primer_digito = Math.floor((Math.random() * 3));
 	var numero = Math.floor((Math.random() * 10000000));
-	return "XYZ".charAt(primer_digito) + pad(numero.toString(), 7) + calcula_letra(parseInt(primer_digito.toString() + numero.toString));
+	return "XYZ".charAt(primer_digito) + pad(numero.toString(), 7) + calcula_letra(parseInt(primer_digito.toString() + numero.toString()));
 }
 
 function genera_cif() {
