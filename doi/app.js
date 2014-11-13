@@ -13,6 +13,37 @@ $(document).ready(function() {
 	$('#result_nif').val(genera_nif());
 	$('#result_nie').val(genera_nie());
 	$('#result_cif').val(genera_cif());
+
+	$('#cifra_control_btn').click(function() {
+
+		var escape = function() {
+			$('#cifra_control').val('Formato inválido');
+		};
+		var string = $('#cifra_control').val(),
+			numero = null;
+		if (string.length == 8) {
+			try {
+				var index = "XYZ".indexOf(string.substr(0, 1));
+				if (index !== -1) { //NIE
+					numero = pad(parseInt(index.toString() + string.substr(1, string.length - 1), 10), 8);
+				} else { //DNI
+					numero = parseInt(string, 10);
+				}
+				if (!isNaN(numero)) {
+					$('#cifra_control').val(string + calcula_letra(numero));
+				} else {
+					escape();
+				}
+				
+			} catch (e) {
+				escape();
+			}
+			
+		} else {
+			escape();
+		}
+		
+	});
 });
 
 function genera_nif() {
