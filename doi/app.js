@@ -37,12 +37,12 @@ function genera_cif() {
 	
     var a = 0;
     var b = 0;
-    var calculo = new Array(0,2,4,6,8,1,3,5,7,9);
+    var calculo = new Array(0, 2, 4, 6, 8, 1, 3, 5, 7, 9);
     var uletra = new Array('J', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I') ;
     var sonletra = ['N', 'P', 'Q', 'R', 'W'];
      
-    for(x=2;x<=6;x+=2) {
-	    a = a + parseInt(cif.substr(x,1));
+    for (x = 2; x <= 6; x+=2) {
+	    a = a + parseInt(cif.substr(x, 1));
 	    b = b + calculo[parseInt(cif.substr(x - 1, 1))];
     }	
     b = b + calculo[parseInt(cif.substr(x - 1, 1))];
@@ -67,9 +67,3 @@ function pad (str, max) {
 	str = str.toString();
   	return str.length < max ? pad("0" + str, max) : str;
 }
-
-
-
-
-
-
