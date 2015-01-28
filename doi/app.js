@@ -65,28 +65,7 @@ function genera_cif() {
 	var P = Math.floor((Math.random() * 100) + 1);
 	var N = Math.floor((Math.random() * 100000));
 	var cif = O + pad(P.toString(), 2) + pad(N.toString(), 5);
-	
-    var a = 0;
-    var b = 0;
-    var calculo = new Array(0, 2, 4, 6, 8, 1, 3, 5, 7, 9);
-    var uletra = new Array('J', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I') ;
-    var sonletra = ['N', 'P', 'Q', 'R', 'W'];
-     
-    for (x = 2; x <= 6; x+=2) {
-	    a = a + parseInt(cif.substr(x, 1));
-	    b = b + calculo[parseInt(cif.substr(x - 1, 1))];
-    }	
-    b = b + calculo[parseInt(cif.substr(x - 1, 1))];
-    c = a + b;
-    d = (10 - (c % 10));
-
-    if (sonletra.indexOf(O) != -1) {
-    	control = uletra[d];
-    } else {
-    	control = d;
-    }
-
-    return cif + control.toString();
+	return cif + calcula_control_cif(cif);
 }
 
 function calcula_letra(dni_int) {
@@ -97,4 +76,47 @@ function calcula_letra(dni_int) {
 function pad (str, max) {
 	str = str.toString();
   	return str.length < max ? pad("0" + str, max) : str;
+}
+
+function calcula_control_cif(cif) {
+	var valueCif = cif.substr(1, cif.length - 1); 
+	var suma = 0; 
+	for (i = 1; i < valueCif.length; i = i + 2) { 
+		suma = suma + parseInt(valueCif.substr(i, 1)); 
+	} 
+	var suma2 = 0; 
+	for (i = 0; i < valueCif.length; i = i + 2) { 
+		result = parseInt(valueCif.substr(i, 1)) * 2; 
+		if (String(result).length == 1) { 
+			suma2 = suma2 + parseInt(result); 
+		} else { 
+			suma2 = suma2 + parseInt(String(result).substr(0, 1)) + parseInt(String(result).substr(1, 1)); 
+		} 
+	}
+	suma = suma + suma2; 
+	var unidad = String(suma).substr(1, 1);
+	unidad = 10 - parseInt(unidad); 
+	var primerCaracter = cif.substr(0, 1).toUpperCase(); 
+	if (primerCaracter.match(/^[FJKNPQRSUVW]$/)) { 
+		return String.fromCharCode(64 + unidad).toUpperCase();
+	} else if (primerCaracter.match(/^[XYZ]$/)) { 
+		var newcif; 
+		if (primerCaracter == "X") {
+			newcif = cif.substr(1); 
+		}
+		else if (primerCaracter == "Y") {
+			newcif = "1" + cif.substr(1); 
+		}
+		else if (primerCaracter == "Z") {
+			newcif="2" + cif.substr(1); 
+		}
+		return calcula_letra(newcif); 
+	} else if (primerCaracter.match(/^[ABCDEFGHLM]$/)) { 
+		if (unidad == 10) {
+			unidad=0;
+		} 
+		return unidad;
+	} else { 
+		return calcula_letra(cif); 
+	}
 }
