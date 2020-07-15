@@ -1,7 +1,6 @@
 .idea
 .DS_Store
 .ftppass
-dist
 assets
 node_modules
 package-lock.json
