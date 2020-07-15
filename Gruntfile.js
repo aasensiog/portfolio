@@ -21,25 +21,11 @@ module.exports = function (grunt) {
                 ]
             }
         },
-        clean: ['dist'],
-       'ftp-deploy': {
-            build: {
-                auth: {
-                    host: 'albertasensio.es',
-                    port: 21,
-                    authKey: 'key'
-                },
-                src: 'dist',
-                dest: 'web',
-                // exclusions: ['./js/src', 'favicon', './css/src', 'img/profiles', 'node_modules', '.ftppass', '.gitignore', '*.txt', '*.json', './ignore', '.git', '.idea', '.DS_Store'],
-                forceVerbose: true
-            }
-        }
+        clean: ['dist']
     });
 
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-ftp-deploy');
     grunt.registerTask('default', ['clean', 'copy']);
 
     // NEW DEPLOY
